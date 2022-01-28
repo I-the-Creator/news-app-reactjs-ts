@@ -1,0 +1,15 @@
+$base-color: #004FEC;
+
+.page-title {
+    margin-bottom: 75px;
+    
+    h2 {
+        font-size: 60px;
+        margin: 0;
+        font-weight: 400;
+
+        span {
+            color: $base-color;
+        }
+    }
+}

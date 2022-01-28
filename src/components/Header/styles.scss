@@ -1,0 +1,29 @@
+$base-color: #004FEC;
+$base-text-color: #333D51;
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 0;
+    margin-bottom: 90px;
+
+    .title {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    nav {
+        a {
+            margin-left: 35px;
+            font-size: 18px;
+            font-weight: 400;
+
+            &.link-active {
+                color: $base-color;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}

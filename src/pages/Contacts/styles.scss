@@ -1,0 +1,59 @@
+$base-color: #004FEC;
+$base-text-color: #333D51;
+
+.contacts-page {
+    display: flex;
+    justify-content: space-between;
+    height: 340px;
+    
+    .info {
+        width: 50%;
+
+        .phone {
+            margin-bottom: 50px;
+
+            a {
+                color: $base-color;
+                display: block;
+                font-size: 60px;
+                line-height: 56px;
+            }
+        }
+        
+        .name {
+            padding-left: 23px;
+            border-left: 1px solid $base-color;
+            font-size: 25px;
+            line-height: 27px;
+            margin-bottom: 25px;
+        }
+
+        .email {
+            margin-bottom: 52px;
+
+            a {
+                font-size: 20px;
+            }
+        }
+        
+        .position {
+            color: rgba(51, 61, 81, 0.5);
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .technologies {
+            font-size: 20px;
+        }
+    }
+
+    .image {
+        width: 50%;
+
+        img {
+            width: 100%;
+            min-width: 540px;
+            height: 340px;
+        }
+    }
+}
