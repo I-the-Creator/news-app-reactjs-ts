@@ -1,0 +1,45 @@
+.news-detail-page{
+    .loader {
+        font-size: 60px;
+    }
+
+    .news-detail-wrapper {
+        display: flex;
+
+        .left-part {
+            width: 40%;
+        }
+    
+        .right-part {
+            width: 60%;
+            padding-left: 30px;
+        }
+    
+        .title {
+            font-size: 50px;
+            margin: 0;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .source {
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+        
+        img {
+            max-width: 730px;
+            max-height: 380px;
+            margin-bottom: 60px;
+        }
+        
+        .summary {
+            font-size: 25px;
+            margin: 0;
+        }
+    }
+}
+
+
+
+
