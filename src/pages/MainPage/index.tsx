@@ -1,41 +1,40 @@
 import React, { useState, useEffect } from "react";
-import './styles.sass';
 
 // import route to page
 import routeMain from "./routes";
-
-//Components
-import NewsList from "components/NewsList";
 import PageTitle from "components/PageTitle";
-
-//Services
-import getNewsEn from "services/getNewsEn";
+import NewsList from "components/NewsList";
 import getNewsRu from "services/getNewsRu";
 // import newsListMocks from "fixtures/newsListMocks";
 
+//TYPES
+import { INewsDetail } from 'types/INewsDetail';
 
-const NewsListPage = () => {
-    const [newsList, setNewsList] = useState([]);
+//Styles
+import './styles.sass';
+
+const MainPage = () => {
+    const [newsList, setNewsList] = useState<INewsDetail[]>([]);
     const [language, setLanguage] = useState('ru');
 
     useEffect(() => {
         getNewsRu(language).then(response => {
             setNewsList(response.data.articles)
         })
-    }, [])
+    }, [language])
 
     return (
         <section className="main-page">
-            <PageTitle
+            <PageTitle 
                 title={
-                    <h2>Stay <br/> up to <span>date</span></h2>
+                    <h2>Always <br/> breaking <span>news</span></h2>
                 }
             />
-            {newsList.length > 0 && <NewsList list={newsList}/>}
+            {newsList.length > 0 && <NewsList list={newsList.slice(0, 6)}/>}
         </section>
     )
 }
 
-export { routeMain };
+export { routeMain };  // export route
 
-export default NewsListPage;
+export default MainPage;

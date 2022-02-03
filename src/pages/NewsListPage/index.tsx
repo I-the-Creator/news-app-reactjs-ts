@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
-import './styles.sass';
 
 // import route to page
 import routeMain from "./routes";
-import PageTitle from "components/PageTitle";
+
+//Components
 import NewsList from "components/NewsList";
+import PageTitle from "components/PageTitle";
+
+//Services
+import getNewsEn from "services/getNewsEn";
 import getNewsRu from "services/getNewsRu";
 // import newsListMocks from "fixtures/newsListMocks";
 
-const MainPage = () => {
-    const [newsList, setNewsList] = useState([]);
+//TYPES
+import { INewsDetail } from 'types/INewsDetail';
+
+//Styles
+import './styles.sass';
+
+
+const NewsListPage = () => {
+    const [newsList, setNewsList] = useState<INewsDetail[]>([]);
     const [language, setLanguage] = useState('ru');
 
     useEffect(() => {
@@ -20,16 +31,16 @@ const MainPage = () => {
 
     return (
         <section className="main-page">
-            <PageTitle 
+            <PageTitle
                 title={
-                    <h2>Always <br/> breaking <span>news</span></h2>
+                    <h2>Stay <br/> up to <span>date</span></h2>
                 }
             />
-            {newsList.length > 0 && <NewsList list={newsList.slice(0, 6)}/>}
+            {newsList.length > 0 && <NewsList list={newsList}/>}
         </section>
     )
 }
 
-export { routeMain };  // export route
+export { routeMain };
 
-export default MainPage;
+export default NewsListPage;

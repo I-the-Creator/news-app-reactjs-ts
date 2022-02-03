@@ -7,7 +7,7 @@ import './styles.scss';
 import routeMain from "./routes";
 
 //Images
-import AndrewImg from 'assets/img/Front-End-Developer.jpg'
+import AndrewImg from 'assets/img/front-end-developer.jpg';
 
 const Contacts = () => (
     <section className="contacts-page">

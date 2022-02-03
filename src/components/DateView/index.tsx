@@ -1,9 +1,14 @@
 import React from 'react';
-import './styles.scss';
 
 import datePrepare from 'utils/datePrepare';
 
-const DateView = ({ date }) => {
+import './styles.scss';
+
+interface IDateViewParams {
+    date: string
+}
+
+const DateView: React.FC<IDateViewParams> = ({ date }) => {
     const { day, month } = datePrepare(date)
 
     return (

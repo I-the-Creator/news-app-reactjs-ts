@@ -9,28 +9,33 @@ import getNewsRu from "services/getNewsRu";
 import NotFound from "components/NewsList/NotFound/NotFound";
 import DateView from "components/DateView";
 
-//Styles
-import './styles.scss';
-
 // Import route to page
 import routeMain from "./routes";
+
+//Types
+import { ID } from 'types/ID'
+import { INewsDetail } from 'types/INewsDetail';
+
+//Styles
+import './styles.scss';
 
 const NewsDetail = () => {
 
     // get the id parameter from URL
-    const { id } = useParams(); 
+    const { id } = useParams<ID>(); 
 
-    const [news, setNews] = useState(null);
+    const [news, setNews] = useState<INewsDetail | null>(null);
     const [language, setLanguage] = useState('ru');
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getNewsRu(language).then(response => {
-            setNews(response.data.articles.find(item => item._id === id));
+            const currentNews = response.data.articles?.find((item: INewsDetail) => item._id === id)
+            setNews(currentNews);
             // setNews(response.data.articles.filter(item => item._id === id)[0]);
             setLoading(false);
         })
-    }, [id])
+    }, [id, language])
 
     return (
         <section className="news-detail-page">
