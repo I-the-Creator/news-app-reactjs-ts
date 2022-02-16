@@ -15,13 +15,13 @@ const Info = () => {
 
     const [input, setInput] = useState<string>('');
 
-    const handleClick = () => {
+    /* const handleClick = () => {
         console.log('Button clicked');
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInput(event.target.value)
-    }
+    } */
 
     return (
         <section className="contacts-page">
